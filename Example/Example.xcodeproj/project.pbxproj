@@ -13,8 +13,8 @@
 		DE589C881E71920D00016C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE589C871E71920D00016C16 /* Assets.xcassets */; };
 		DE589C8B1E71920D00016C16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE589C891E71920D00016C16 /* LaunchScreen.storyboard */; };
 		DE589C941E71925400016C16 /* ClickEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE589C931E71925400016C16 /* ClickEvent.swift */; };
-		DE589C961E71927A00016C16 /* SwiftEvent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE589C951E71927A00016C16 /* SwiftEvent.framework */; };
-		DE589C981E71938D00016C16 /* SwiftEvent.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DE589C951E71927A00016C16 /* SwiftEvent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE589C9A1E7196DF00016C16 /* SwiftEvent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE589C991E7196DF00016C16 /* SwiftEvent.framework */; };
+		DE589C9B1E71970A00016C16 /* SwiftEvent.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DE589C991E7196DF00016C16 /* SwiftEvent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DE589C981E71938D00016C16 /* SwiftEvent.framework in CopyFiles */,
+				DE589C9B1E71970A00016C16 /* SwiftEvent.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,7 +39,7 @@
 		DE589C8A1E71920D00016C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE589C8C1E71920D00016C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE589C931E71925400016C16 /* ClickEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickEvent.swift; sourceTree = "<group>"; };
-		DE589C951E71927A00016C16 /* SwiftEvent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftEvent.framework; sourceTree = "<group>"; };
+		DE589C991E7196DF00016C16 /* SwiftEvent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftEvent.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE589C961E71927A00016C16 /* SwiftEvent.framework in Frameworks */,
+				DE589C9A1E7196DF00016C16 /* SwiftEvent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +73,7 @@
 		DE589C7F1E71920D00016C16 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				DE589C951E71927A00016C16 /* SwiftEvent.framework */,
+				DE589C991E7196DF00016C16 /* SwiftEvent.framework */,
 				DE589C921E71924700016C16 /* events */,
 				DE589C801E71920D00016C16 /* AppDelegate.swift */,
 				DE589C821E71920D00016C16 /* ViewController.swift */,
