@@ -18,6 +18,8 @@ public class Event: NSObject {
         super.init()
     }
     
+    //MARK: register and unregister
+    
     ///register an observer
     func register<T>(observer: Observer<T>) {
         let value = NSValue(nonretainedObject: observer)
@@ -30,6 +32,8 @@ public class Event: NSObject {
         observers.removeObject(value)
     }
     
+    
+    //MARK: public methods 
     
     public func post<T>(message: T) {
         for item in observers {

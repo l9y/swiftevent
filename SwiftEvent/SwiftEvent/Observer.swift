@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+///Event observer
 public class Observer<T>: NSObject {
 
     public var receive: (T -> ())?
