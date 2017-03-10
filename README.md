@@ -3,9 +3,15 @@
 ## Installation
 
 ### Carthage
+####swift 3
 ```
 github "l9y/SwiftEvent"
 ```
+####swift 2.2
+```
+github "l9y/SwiftEvent" == 1.0
+```
+
 ## Usage
 
 ### Custom your event
