@@ -8,36 +8,36 @@
 
 import UIKit
 
-public class Event: NSObject {
+open class Event: NSObject {
     
-    public static let instance = Event()
+    open static let instance = Event()
     
     var observers: NSMutableArray = NSMutableArray()
     
-    private override init (){
+    fileprivate override init (){
         super.init()
     }
     
     //MARK: register and unregister
     
     ///register an observer
-    func register<T>(observer: Observer<T>) {
+    func register<T>(_ observer: Observer<T>) {
         let value = NSValue(nonretainedObject: observer)
-        observers.addObject(value)
+        observers.add(value)
     }
     
     ///unregister an observer
-    func unRegister<T>(observer: Observer<T>) {
+    func unRegister<T>(_ observer: Observer<T>) {
         let value = NSValue(nonretainedObject: observer)
-        observers.removeObject(value)
+        observers.remove(value)
     }
     
     
     //MARK: public methods 
     
-    public func post<T>(message: T) {
+    open func post<T>(_ message: T) {
         for item in observers {
-            if let observer = item.nonretainedObjectValue as? Observer<T> {
+            if let observer = (item as AnyObject).nonretainedObjectValue as? Observer<T> {
                 observer.receive?(message)
             }
         }

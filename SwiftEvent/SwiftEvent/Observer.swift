@@ -8,9 +8,9 @@
 
 import UIKit
 ///Event observer
-public class Observer<T>: NSObject {
+open class Observer<T>: NSObject {
 
-    public var receive: (T -> ())?
+    open var receive: ((T) -> ())?
     
     public override init() {
         super.init()
