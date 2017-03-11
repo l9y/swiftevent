@@ -7,7 +7,7 @@
 ```
 github "l9y/SwiftEvent"
 ```
-####swift 2.2
+####swift 2.3
 ```
 github "l9y/SwiftEvent" == 1.0
 ```
