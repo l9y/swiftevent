@@ -3,11 +3,11 @@
 ## Installation
 
 ### Carthage
-####swift 3
+swift 3
 ```
 github "l9y/SwiftEvent"
 ```
-####swift 2.3
+swift 2.3
 ```
 github "l9y/SwiftEvent" == 1.0
 ```
