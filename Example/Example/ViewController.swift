@@ -22,12 +22,12 @@ class ViewController: UIViewController {
     }
 
 
-    @IBAction func sendClickEvent(sender: AnyObject) {
+    @IBAction func sendClickEvent(_ sender: AnyObject) {
         Event.instance.post(ClickEvent())
     }
     
     
-    func onReceiveClickEvent(clickEvent: ClickEvent) {
+    func onReceiveClickEvent(_ clickEvent: ClickEvent) {
         print("click \(clickEvent)")
     }
 

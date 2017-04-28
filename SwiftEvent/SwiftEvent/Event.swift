@@ -8,38 +8,51 @@
 
 import UIKit
 
-public class Event: NSObject {
+open class Event: NSObject {
     
-    public static let instance = Event()
+    open static let instance = Event()
     
-    var observers: NSMutableArray = NSMutableArray()
+    var observers : [String: NSMutableArray] = [:]
     
-    private override init (){
+    fileprivate override init (){
         super.init()
     }
     
-    //MARK: register and unregister
-    
-    ///register an observer
-    func register<T>(observer: Observer<T>) {
+    func register<T>(_ observer: Observer<T>) {
         let value = NSValue(nonretainedObject: observer)
-        observers.addObject(value)
+        append(key: "\(type(of: T.self))", value: value)
     }
     
-    ///unregister an observer
-    func unRegister<T>(observer: Observer<T>) {
+    func unRegister<T>(_ observer: Observer<T>) {
         let value = NSValue(nonretainedObject: observer)
-        observers.removeObject(value)
+        remove(key: "\(type(of: T.self))", value: value)
     }
     
     
-    //MARK: public methods 
-    
-    public func post<T>(message: T) {
-        for item in observers {
-            if let observer = item.nonretainedObjectValue as? Observer<T> {
-                observer.receive?(message)
+    open func post<T>(_ message: T) {
+        if let list = observers["\(type(of: T.self))"]{
+            for item in list {
+                if let observer = (item as! NSValue).nonretainedObjectValue as? Observer<T> {
+                    observer.receive?(message)
+                }
             }
+        }
+    }
+    
+    
+    
+    private func append(key: String, value: NSValue) {
+        if observers[key] == nil {
+            observers[key] = NSMutableArray()
+        }
+        observers[key]!.add(value)
+    }
+    
+    
+    private func remove(key: String, value: NSValue) {
+        observers[key]?.remove(value)
+        if 0 == observers[key]?.count {
+            observers.removeValue(forKey: key)
         }
     }
 }
