@@ -21,9 +21,25 @@ class SwiftEventTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testEvent() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        var reciveTimes = 0
+        var obserStr: Observer<String>! = Observer<String>()
+        
+        assert(1 == Event.instance.observers["\(type(of: String.self))"]!.count)
+        
+        obserStr.receive = {str in
+            assert("hello" == str)
+            reciveTimes = reciveTimes + 1
+        }
+        Event.instance.post("hello")
+        obserStr = nil
+        Event.instance.post("hello")
+        assert(1 == reciveTimes)
+        assert(0 == Event.instance.observers.count)
+        
     }
     
     func testPerformanceExample() {
